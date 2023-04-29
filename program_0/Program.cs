@@ -6,11 +6,8 @@
 
 void Print(string[] arr)
 {
-  int size = arr.Length;
-
-  for (int i = 0; i < size; i++)
-    Console.WriteLine($"{arr[i]} ");
-  Console.WriteLine();
+  for (int i = 0; i < arr.Length; i++)
+    Console.Write($"{arr[i]} ");
 }
 
 string[] Words(string a, string b, string c, string d)
@@ -22,17 +19,16 @@ string[] Words(string a, string b, string c, string d)
 
 string[] Words_2(string[] arr_2)
 {
-  string[] arr_3 = new string [arr_2.Length];
-  int i = 0;
-  int i_2 = 0;
-  while (i < arr_2.Length)
-   i++;
-  
-  if (arr_2[i].Length <= 3)
+  string[] arr_3 = new string[arr_2.Length];
+  int count = 0;
+  for (int i = 0; i < arr_2.Length; i++)
+  {
+    if (arr_2[i].Length <= 3)
     {
-      arr_3[i_2] = arr_2[i];
-      i_2++;
+      arr_3[count] = arr_2[i];
+      count++;
     }
+  }
   return arr_3;
 }
 
@@ -41,6 +37,7 @@ string a_1 = Console.ReadLine();
 string b_1 = Console.ReadLine();
 string c_1 = Console.ReadLine();
 string d_1 = Console.ReadLine();
+
 
 string[] words = Words(a_1, b_1, c_1, d_1);
 string[] words_2 = Words_2(words);
